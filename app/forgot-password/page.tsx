@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
 import { forgotPassword } from "../api/forgotPassword";
-import { Loader } from "lucide-react";
+import { Loader, MoveLeft } from "lucide-react";
+import Link from "next/link";
 
 function page() {
   const [email, setEmail] = useState("");
@@ -27,7 +28,10 @@ function page() {
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
-      <div className="w-80 h-fit mx-auto">
+      <Link href="/" className="fixed inset-10 flex gap-2 w-fit h-fit">
+        <MoveLeft className="size-6 stroke-[1.5]" /> Go back
+      </Link>
+      <div className="w-[90%] md:w-80 h-fit mx-auto">
         <div className="flex flex-col gap-2 mb-4">
           <h1 className="text-2xl font-semibold text-black">
             We'll send a reset link to your email

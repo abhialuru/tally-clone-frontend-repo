@@ -3,7 +3,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 import { resetPassword } from "../api/resetPassword";
 import Link from "next/link";
-import { Loader } from "lucide-react";
+import { Loader, MoveLeft } from "lucide-react";
 
 function page() {
   const params = useSearchParams();
@@ -64,7 +64,10 @@ function page() {
 
   return (
     <div className="w-full flex justify-center items-center h-screen">
-      <div className="w-80 mx-auto">
+      <Link href="/" className="fixed inset-10 flex gap-2 w-fit h-fit">
+        <MoveLeft className="size-6 stroke-[1.5]" /> Go back
+      </Link>
+      <div className="w-[90%] md:w-80 mx-auto">
         <div>
           <h1 className="text-2xl mb-8 font-semibold text-black">
             Create your new password

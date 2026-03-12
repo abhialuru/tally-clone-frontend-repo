@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { signUpUser } from "../api/signup";
 import Link from "next/link";
-import { Loader } from "lucide-react";
+import { Loader, MoveLeft } from "lucide-react";
 
 function page() {
   const [email, setEmail] = useState("");
@@ -36,7 +36,10 @@ function page() {
 
   return (
     <section className="w-full h-full">
-      <div className="w-80 mx-auto my-24">
+      <Link href="/" className="fixed inset-10 flex gap-2 w-fit h-fit">
+        <MoveLeft className="size-6 stroke-[1.5]" /> Go back
+      </Link>
+      <div className="w-[90%] md:w-80 mx-auto my-24">
         <div className="flex flex-col gap-2 mb-4">
           <h1 className="text-2xl font-semibold text-black">
             Create your Tally acount
@@ -49,7 +52,7 @@ function page() {
           onClick={() =>
             (window.location.href = `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/google`)
           }
-          className="font-semibold shrink-0 w-80 text-[#777672] py-2 hover:bg-gray-100 transition-all duration-150 ease-in flex gap-4 justify-center items-center border border-gray-300 rounded-lg"
+          className="font-semibold shrink-0 w-full md:w-80 text-[#777672] py-2 hover:bg-gray-100 transition-all duration-150 ease-in flex gap-4 justify-center items-center border border-gray-300 rounded-lg"
         >
           <span className="size-5">
             <Image
@@ -62,7 +65,7 @@ function page() {
           </span>
           Continue with Google
         </button>
-        <div className="h-px bg-gray-200 w-80 my-10" />
+        <div className="h-px bg-gray-200 w-full md:w-80 my-10" />
         <form onSubmit={handleSignUp} className="flex flex-col gap-5">
           <div className="flex flex-col gap-2 ">
             <p className="font-semibold text-black">Email</p>
