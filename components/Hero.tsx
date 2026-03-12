@@ -3,18 +3,16 @@ function Hero() {
     <section className="w-full">
       <div className="flex flex-col pt-28 justify-center items-center">
         <h1 className="text-3xl text-center md:text-[62px] font-bold text-black mb-2">
-          The simplest way to create forms
+          Make forms in a few clicks
         </h1>
         <div className="flex flex-col justify-center items-center md:text-[22px] text-center text-[#37352F] mb-8">
           <p className="hidden md:block">
-            Say goodbye to boring forms. Meet Tally — the free,
+            Stop wasting time on dull forms. Meet Lekha — the smart,
           </p>
-          <p className="hidden md:block">
-            intuitive form builder you’ve been looking for.
-          </p>
-          <p className="text-sm">
-            Say goodbye to boring forms. Meet Tally — the free, intuitive form
-            builder you’ve been looking for.
+          <p className="hidden md:block">easy form builder for everyone.</p>
+          <p className="text-sm md:hidden">
+            No more boring forms. Meet Lekha — the fast, intuitive tool to
+            collect what matters.
           </p>
         </div>
         <div className="flex flex-col gap-2 justify-center items-center">

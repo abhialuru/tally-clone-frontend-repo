@@ -4,8 +4,8 @@ import React from "react";
 function Navbar() {
   return (
     <nav className="w-full p-5 flex justify-between items-center">
-      <div className="text-xl md:text-2xl font-bold text-black italic">
-        AutoForm*
+      <div className="text-2xl md:text-2xl font-semibold text-black ">
+        lekha
       </div>
       <div className="flex gap-2 md:gap-4 justify-center items-center font-semibold">
         <Link
