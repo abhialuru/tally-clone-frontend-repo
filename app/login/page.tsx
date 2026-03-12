@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { loginUser } from "../api/login";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -21,8 +21,6 @@ function Page() {
 
     try {
       const data = await loginUser(email, password);
-
-      localStorage.setItem("token", data.token);
 
       setEmail("");
       setPassword("");

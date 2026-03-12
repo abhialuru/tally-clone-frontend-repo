@@ -5,14 +5,14 @@ import { useRouter } from "next/navigation";
 export default function LogoutButton() {
   const router = useRouter();
 
-  function logout() {
+  function handleLogout() {
     localStorage.removeItem("token");
-    router.push("/login");
+    router.replace("/login");
   }
 
   return (
     <button
-      onClick={logout}
+      onClick={handleLogout}
       className="px-4 py-2 bg-black text-white rounded-lg absolute top-5 right-5 cursor-pointer"
     >
       Logout

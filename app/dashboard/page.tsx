@@ -1,7 +1,6 @@
 import LogoutButton from "@/components/LogoutButton";
-import ProtectedRoutes from "@/components/ProtectedRoutes";
 
-function DashboardContent() {
+export default function Page() {
   return (
     <div className="w-full h-screen ">
       <LogoutButton />
@@ -10,13 +9,5 @@ function DashboardContent() {
         <span className="italic text-sm">(In Progress)</span>
       </div>
     </div>
-  );
-}
-
-export default function Page() {
-  return (
-    <ProtectedRoutes>
-      <DashboardContent />
-    </ProtectedRoutes>
   );
 }
