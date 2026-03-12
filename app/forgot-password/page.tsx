@@ -4,7 +4,7 @@ import { forgotPassword } from "../api/forgotPassword";
 import { Loader, MoveLeft } from "lucide-react";
 import Link from "next/link";
 
-function page() {
+function Page() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -61,4 +61,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

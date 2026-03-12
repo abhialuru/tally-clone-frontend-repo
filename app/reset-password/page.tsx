@@ -1,21 +1,24 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+export const dynamic = "force-dynamic";
+
+import React, { useEffect, useState } from "react";
 import { resetPassword } from "../api/resetPassword";
 import Link from "next/link";
 import { Loader, MoveLeft } from "lucide-react";
 
-function page() {
-  const params = useSearchParams();
-
-  const token = params.get("token");
-
+function Page() {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
   const [loading, setLoading] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setToken(params.get("token"));
+  }, []);
 
   async function handleResetPassword(e: React.FormEvent) {
     e.preventDefault();
@@ -112,4 +115,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

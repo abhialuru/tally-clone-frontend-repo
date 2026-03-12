@@ -5,7 +5,7 @@ import { signUpUser } from "../api/signup";
 import Link from "next/link";
 import { Loader, MoveLeft } from "lucide-react";
 
-function page() {
+function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -113,4 +113,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

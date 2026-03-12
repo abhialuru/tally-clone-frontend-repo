@@ -3,14 +3,19 @@
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+export const dynamic = "force-dynamic";
 
 function Page() {
-  const params = useSearchParams();
   const router = useRouter();
-  const token = params.get("token");
+  const [token, setToken] = useState<string | null>(null);
 
   const [status, setStatus] = useState("Verifying...");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setToken(params.get("token"));
+  }, []);
 
   if (error) {
     <div className="w-full h-screen flex gap-2 justify-center items-center">
