@@ -72,7 +72,10 @@ function Page() {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError("");
+              }}
               required
               className="w-full rounded-lg border border-gray-300 py-2 focus:outline-none pl-2"
             />
@@ -82,7 +85,10 @@ function Page() {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setError("");
+              }}
               className="w-full rounded-lg border border-gray-300 py-2 focus:outline-none pl-2"
               required
               minLength={4}

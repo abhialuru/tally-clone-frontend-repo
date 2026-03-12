@@ -81,7 +81,10 @@ function Page() {
               <input
                 type="password"
                 value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
+                onChange={(e) => {
+                  setNewPassword(e.target.value);
+                  setError("");
+                }}
                 className="w-full rounded-lg border border-gray-300 py-1 focus:outline-none pl-2"
                 required
               />
@@ -91,7 +94,10 @@ function Page() {
               <input
                 type="password"
                 value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                onChange={(e) => {
+                  setConfirmPassword(e.target.value);
+                  setError("");
+                }}
                 className="w-full rounded-lg border border-gray-300 py-1 focus:outline-none pl-2"
                 required
                 minLength={4}

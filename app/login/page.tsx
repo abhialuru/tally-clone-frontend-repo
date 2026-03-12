@@ -22,9 +22,7 @@ function Page() {
     try {
       const data = await loginUser(email, password);
 
-      console.log(data);
-
-      document.cookie = `token=${data.token}; path=/`;
+      localStorage.setItem("token", data.token);
 
       setEmail("");
       setPassword("");
@@ -72,7 +70,10 @@ function Page() {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setError("");
+              }}
               className="w-full rounded-lg border border-gray-300 py-2 focus:outline-none pl-2"
               required
             />
@@ -82,7 +83,10 @@ function Page() {
             <input
               type="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setError("");
+              }}
               className="w-full rounded-lg border border-gray-300 py-2 focus:outline-none pl-2"
               required
               minLength={4}

@@ -43,7 +43,10 @@ function Page() {
             <input
               type="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setMessage("");
+              }}
               className="w-full rounded-lg border border-gray-300 py-2 focus:outline-none pl-2"
               required
             />
@@ -54,7 +57,7 @@ function Page() {
           >
             {loading ? <Loader className="size-6 animate-spin" /> : "Send"}
           </button>
-          {message && <p className="text-sm text-green-500">{message}</p>}
+          {message && <p className="text-sm">{message}</p>}
         </form>
       </div>
     </div>
