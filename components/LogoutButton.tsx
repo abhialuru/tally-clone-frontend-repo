@@ -11,11 +11,10 @@ export default function LogoutButton() {
   async function handleLogout() {
     setLoading(true);
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/logout`, {
-        method: "POST",
-        credentials: "include",
-      });
+      // Remove the token cookie
+      document.cookie = `token=; path=/; max-age=0`;
 
+      // Redirect to login
       router.push("/login");
       router.refresh();
     } catch (error: any) {
