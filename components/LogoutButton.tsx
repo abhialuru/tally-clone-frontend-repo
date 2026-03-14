@@ -11,7 +11,7 @@ export default function LogoutButton() {
   async function handleLogout() {
     setLoading(true);
     try {
-      document.cookie = `token=; path=/; max-age=0`;
+      await fetch("/api/auth/logout", { method: "POST" });
 
       router.push("/login");
       router.refresh();
