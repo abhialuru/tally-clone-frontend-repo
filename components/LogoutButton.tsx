@@ -11,10 +11,8 @@ export default function LogoutButton() {
   async function handleLogout() {
     setLoading(true);
     try {
-      // Remove the token cookie
       document.cookie = `token=; path=/; max-age=0`;
 
-      // Redirect to login
       router.push("/login");
       router.refresh();
     } catch (error: any) {
